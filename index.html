@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cicatriza+ | Sistema Inteligente de Gestão de Feridas</title>
+  <meta name="description" content="Plataforma clínica para registro, acompanhamento e evolução de feridas. Desenvolvida para enfermeiros e profissionais de saúde." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       LANDING PAGE
+  ══════════════════════════════════════════════════ -->
+  <div id="landing-page">
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a class="nav-logo" href="#" onclick="scrollToTop(event)">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          </div>
+          <span>Cicatriza<span class="logo-plus">+</span></span>
+        </a>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="#features" class="nav-link" onclick="smoothScroll(event,'features')">Funcionalidades</a>
+          <a href="#how-it-works" class="nav-link" onclick="smoothScroll(event,'how-it-works')">Como funciona</a>
+          <a href="#testimonials" class="nav-link" onclick="smoothScroll(event,'testimonials')">Depoimentos</a>
+          <a href="#pricing" class="nav-link" onclick="smoothScroll(event,'pricing')">Planos</a>
+          <a href="#contact" class="nav-link" onclick="smoothScroll(event,'contact')">Contato</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn-ghost" onclick="showApp('s-login')">Entrar</button>
+          <button class="btn-primary-sm" onclick="showApp('s-register')">Começar grátis</button>
+          <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="container">
+        <div class="hero-badge animate-fade-up">
+          <span class="badge-dot"></span>
+          Plataforma clínica para profissionais de saúde
+        </div>
+        <h1 class="hero-title animate-fade-up" style="animation-delay:.1s">
+          Gestão de feridas<br/>
+          <span class="gradient-text">inteligente e precisa</span>
+        </h1>
+        <p class="hero-subtitle animate-fade-up" style="animation-delay:.2s">
+          Registre, acompanhe e evolua o tratamento de feridas com eficiência clínica.
+          Fotodocumentação integrada, relatórios automáticos e prontuário digital completo.
+        </p>
+        <div class="hero-cta animate-fade-up" style="animation-delay:.3s">
+          <button class="btn-hero-primary" onclick="showApp('s-dashboard')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Ver demonstração
+          </button>
+          <button class="btn-hero-ghost" onclick="smoothScroll(event,'how-it-works')">
+            Como funciona?
+          </button>
+        </div>
+        <div class="hero-stats animate-fade-up" style="animation-delay:.4s">
+          <div class="stat-item">
+            <span class="stat-number">2.400+</span>
+            <span class="stat-label">Profissionais ativos</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Satisfação dos usuários</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">45 mil+</span>
+            <span class="stat-label">Feridas acompanhadas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO MOCKUP PREVIEW -->
+      <div class="hero-mockup animate-fade-up" style="animation-delay:.5s">
+        <div class="mockup-frame">
+          <div class="mockup-bar">
+            <span class="mockup-dot red"></span>
+            <span class="mockup-dot yellow"></span>
+            <span class="mockup-dot green"></span>
+            <div class="mockup-url">cicatriza.app/dashboard</div>
+          </div>
+          <div class="mockup-screen">
+            <div class="mockup-sidebar">
+              <div class="mockup-avatar">MS</div>
+              <div class="mockup-nav-item active"></div>
+              <div class="mockup-nav-item"></div>
+              <div class="mockup-nav-item"></div>
+            </div>
+            <div class="mockup-main">
+              <div class="mockup-header-row">
+                <div class="mockup-title-block">
+                  <div class="mockup-line w80"></div>
+                  <div class="mockup-line w50 thin"></div>
+                </div>
+              </div>
+              <div class="mockup-stats-row">
+                <div class="mockup-stat-card teal">
+                  <div class="mockup-line w60 thin"></div>
+                  <div class="mockup-big-num">12</div>
+                </div>
+                <div class="mockup-stat-card">
+                  <div class="mockup-line w60 thin"></div>
+                  <div class="mockup-big-num">34</div>
+                </div>
+                <div class="mockup-stat-card red">
+                  <div class="mockup-line w60 thin"></div>
+                  <div class="mockup-big-num red-num">3</div>
+                </div>
+              </div>
+              <div class="mockup-cards-row">
+                <div class="mockup-card teal-card">
+                  <div class="mockup-card-icon"></div>
+                  <div class="mockup-line w70"></div>
+                  <div class="mockup-line w90 thin"></div>
+                </div>
+                <div class="mockup-card green-card">
+                  <div class="mockup-card-icon green-icon"></div>
+                  <div class="mockup-line w70"></div>
+                  <div class="mockup-line w90 thin"></div>
+                </div>
+              </div>
+              <div class="mockup-table-preview">
+                <div class="mockup-table-row header-row">
+                  <div class="mockup-line w30 thin"></div>
+                  <div class="mockup-line w20 thin"></div>
+                  <div class="mockup-badge badge-yellow"></div>
+                </div>
+                <div class="mockup-table-row">
+                  <div class="mockup-line w40"></div>
+                  <div class="mockup-line w25 thin"></div>
+                  <div class="mockup-badge badge-red"></div>
+                </div>
+                <div class="mockup-table-row">
+                  <div class="mockup-line w35"></div>
+                  <div class="mockup-line w25 thin"></div>
+                  <div class="mockup-badge badge-green"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- LOGOS / CONFIANÇA -->
+    <section class="trust-section">
+      <div class="container">
+        <p class="trust-label">Utilizado por equipes de saúde em todo o Brasil</p>
+        <div class="trust-logos">
+          <div class="trust-logo">Hospital de Base · DF</div>
+          <div class="trust-logo">UPA Central · SP</div>
+          <div class="trust-logo">INCA · RJ</div>
+          <div class="trust-logo">Hospital Sírio-Libanês</div>
+          <div class="trust-logo">FHEMIG · MG</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Funcionalidades</span>
+          <h2 class="section-title">Tudo que você precisa<br/>para o cuidado de feridas</h2>
+          <p class="section-subtitle">Uma plataforma completa pensada por enfermeiros, para enfermeiros.</p>
+        </div>
+
+        <div class="features-grid">
+
+          <div class="feature-card feature-large" data-animate>
+            <div class="feature-icon teal-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+            </div>
+            <h3 class="feature-title">Avaliação clínica estruturada</h3>
+            <p class="feature-desc">Protocolo de avaliação completo: tipo de ferida, tecido, exsudato, sinais de infecção e cobertura utilizada — tudo em um formulário guiado e padronizado.</p>
+            <div class="feature-tag-list">
+              <span class="feature-tag-item">Úlcera por pressão</span>
+              <span class="feature-tag-item">Pé diabético</span>
+              <span class="feature-tag-item">Ferida cirúrgica</span>
+              <span class="feature-tag-item">Úlcera venosa</span>
+            </div>
+          </div>
+
+          <div class="feature-card" data-animate>
+            <div class="feature-icon green-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </div>
+            <h3 class="feature-title">Fotodocumentação integrada</h3>
+            <p class="feature-desc">Registre fotos da ferida a cada avaliação e compare a evolução visual ao longo do tempo com uma galeria organizada por data.</p>
+          </div>
+
+          <div class="feature-card" data-animate>
+            <div class="feature-icon amber-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v18H3z" stroke="none"/><polyline points="3 9 12 2 21 9"/><line x1="3" y1="9" x2="21" y2="9"/><path d="M9 22V12h6v10"/></svg>
+            </div>
+            <h3 class="feature-title">Dashboard inteligente</h3>
+            <p class="feature-desc">Visão consolidada de todos os seus pacientes: casos críticos em destaque, avaliações pendentes e indicadores de evolução.</p>
+          </div>
+
+          <div class="feature-card" data-animate>
+            <div class="feature-icon purple-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="feature-title">Relatórios de evolução</h3>
+            <p class="feature-desc">Histórico completo com timeline de todas as avaliações: área da ferida, tratamentos aplicados e evolução clínica registrada.</p>
+          </div>
+
+          <div class="feature-card" data-animate>
+            <div class="feature-icon teal-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="feature-title">Prontuário digital do paciente</h3>
+            <p class="feature-desc">Cadastro completo com dados clínicos, diagnóstico, leito, histórico de avaliações e toda a documentação em um só lugar.</p>
+          </div>
+
+          <div class="feature-card feature-highlight" data-animate>
+            <div class="feature-icon white-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-title">Segurança e conformidade</h3>
+            <p class="feature-desc">Dados protegidos conforme a LGPD. Acesso exclusivo para profissionais registrados no COREN/CRM. Criptografia de ponta a ponta.</p>
+            <div class="feature-shield">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              LGPD Compliant
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Como funciona</span>
+          <h2 class="section-title">Do cadastro ao relatório<br/>em minutos</h2>
+          <p class="section-subtitle">Fluxo clínico completo desenhado para o dia a dia da enfermagem.</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step" data-animate>
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3>Cadastre o paciente</h3>
+              <p>Registre os dados pessoais e clínicos do paciente: diagnóstico, leito, prontuário e informações de contato do responsável.</p>
+            </div>
+            <div class="step-visual step-visual-1">
+              <div class="step-card">
+                <div class="step-form-row">
+                  <div class="step-field">
+                    <div class="step-label"></div>
+                    <div class="step-input"></div>
+                  </div>
+                  <div class="step-field">
+                    <div class="step-label"></div>
+                    <div class="step-input"></div>
+                  </div>
+                </div>
+                <div class="step-form-row">
+                  <div class="step-field full">
+                    <div class="step-label"></div>
+                    <div class="step-input"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step step-reverse" data-animate>
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3>Avalie a ferida</h3>
+              <p>Preencha o formulário estruturado com tipo de ferida, dimensões, tecido, exsudato e sinais de infecção. Padronizado para toda a equipe.</p>
+            </div>
+            <div class="step-visual step-visual-2">
+              <div class="step-card">
+                <div class="step-checklist">
+                  <div class="step-check done">
+                    <div class="step-check-icon">✓</div>
+                    <div class="step-check-label"></div>
+                  </div>
+                  <div class="step-check done">
+                    <div class="step-check-icon">✓</div>
+                    <div class="step-check-label w80"></div>
+                  </div>
+                  <div class="step-check">
+                    <div class="step-check-icon"></div>
+                    <div class="step-check-label w60"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-animate>
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3>Registre as fotos</h3>
+              <p>Tire fotos diretamente pelo sistema e vincule a cada avaliação. Compare imagens entre datas para visualizar a evolução da ferida.</p>
+            </div>
+            <div class="step-visual step-visual-3">
+              <div class="step-card">
+                <div class="step-photo-grid">
+                  <div class="step-photo p1"></div>
+                  <div class="step-photo p2"></div>
+                  <div class="step-photo p3"></div>
+                  <div class="step-photo p4 upload">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step step-reverse" data-animate>
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <h3>Acompanhe a evolução</h3>
+              <p>Gere relatórios com a timeline completa do tratamento. Visualize a redução da área, melhora do tecido e progressão clínica do paciente.</p>
+            </div>
+            <div class="step-visual step-visual-4">
+              <div class="step-card">
+                <div class="step-timeline">
+                  <div class="step-tl-item">
+                    <div class="step-tl-dot red"></div>
+                    <div class="step-tl-line"></div>
+                    <div class="step-tl-content">
+                      <div class="step-tl-date"></div>
+                      <div class="step-tl-text"></div>
+                    </div>
+                  </div>
+                  <div class="step-tl-item">
+                    <div class="step-tl-dot amber"></div>
+                    <div class="step-tl-line"></div>
+                    <div class="step-tl-content">
+                      <div class="step-tl-date"></div>
+                      <div class="step-tl-text w80"></div>
+                    </div>
+                  </div>
+                  <div class="step-tl-item">
+                    <div class="step-tl-dot teal"></div>
+                    <div class="step-tl-content">
+                      <div class="step-tl-date"></div>
+                      <div class="step-tl-text w60"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header light">
+          <span class="section-tag light-tag">Depoimentos</span>
+          <h2 class="section-title light-title">O que dizem os profissionais</h2>
+          <p class="section-subtitle light-subtitle">Mais de 2.400 enfermeiros e técnicos de enfermagem já usam o Cicatriza+.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card featured" data-animate>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"O Cicatriza+ mudou completamente a forma como gerencio meus pacientes. A fotodocumentação integrada é fantástica — consigo mostrar a evolução de forma clara tanto para a equipe quanto para os familiares."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar teal-av">MP</div>
+              <div>
+                <div class="testimonial-name">Marina Pereira</div>
+                <div class="testimonial-role">Enfermeira Estomaterapeuta · Hospital de Base, DF</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-animate>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Antes eu usava papel para registrar tudo. Agora em 5 minutos a avaliação está salva, com foto e relatório gerado. Incrível a diferença."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar green-av">RL</div>
+              <div>
+                <div class="testimonial-name">Ricardo Lima</div>
+                <div class="testimonial-role">Técnico de Enfermagem · UPA Ceilândia, DF</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-animate>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Ferramenta essencial para a equipe de UTI. O filtro de casos críticos é o primeiro que abro toda manhã. Agilizou muito o plantão."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar amber-av">CS</div>
+              <div>
+                <div class="testimonial-name">Cláudia Santos</div>
+                <div class="testimonial-role">Enfermeira Chefe · Hospital Regional do Gama</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-animate>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"A padronização dos formulários acabou com a inconsistência entre os registros da equipe. Agora todos seguem o mesmo protocolo."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar purple-av">FO</div>
+              <div>
+                <div class="testimonial-name">Felipe Oliveira</div>
+                <div class="testimonial-role">Coordenador de Enfermagem · Clínica São Lucas, SP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Planos</span>
+          <h2 class="section-title">Simples, transparente<br/>e sem surpresas</h2>
+          <p class="section-subtitle">Escolha o plano ideal para o seu contexto de atuação.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card" data-animate>
+            <div class="pricing-plan">Básico</div>
+            <div class="pricing-price">
+              <span class="pricing-currency">R$</span>
+              <span class="pricing-amount">0</span>
+              <span class="pricing-period">/mês</span>
+            </div>
+            <p class="pricing-desc">Ideal para profissionais autônomos iniciando.</p>
+            <ul class="pricing-features">
+              <li class="feature-ok">Até 10 pacientes ativos</li>
+              <li class="feature-ok">Avaliações ilimitadas</li>
+              <li class="feature-ok">Fotodocumentação (5 fotos/paciente)</li>
+              <li class="feature-ok">Relatórios básicos</li>
+              <li class="feature-no">Dashboard analítico avançado</li>
+              <li class="feature-no">Multi-profissional</li>
+              <li class="feature-no">Exportação PDF</li>
+            </ul>
+            <button class="btn-outline-plan" onclick="showApp('s-register')">Criar conta grátis</button>
+          </div>
+
+          <div class="pricing-card pricing-featured" data-animate>
+            <div class="pricing-badge">Mais popular</div>
+            <div class="pricing-plan">Profissional</div>
+            <div class="pricing-price">
+              <span class="pricing-currency">R$</span>
+              <span class="pricing-amount">89</span>
+              <span class="pricing-period">/mês</span>
+            </div>
+            <p class="pricing-desc">Para enfermeiros e clínicas com demanda crescente.</p>
+            <ul class="pricing-features">
+              <li class="feature-ok">Pacientes ilimitados</li>
+              <li class="feature-ok">Avaliações ilimitadas</li>
+              <li class="feature-ok">Fotodocumentação ilimitada</li>
+              <li class="feature-ok">Relatórios completos + PDF</li>
+              <li class="feature-ok">Dashboard analítico avançado</li>
+              <li class="feature-ok">Até 3 profissionais</li>
+              <li class="feature-no">API de integração</li>
+            </ul>
+            <button class="btn-plan-primary" onclick="showApp('s-register')">Começar agora</button>
+          </div>
+
+          <div class="pricing-card" data-animate>
+            <div class="pricing-plan">Institucional</div>
+            <div class="pricing-price">
+              <span class="pricing-price-custom">Sob consulta</span>
+            </div>
+            <p class="pricing-desc">Para hospitais, UPAs e redes de saúde.</p>
+            <ul class="pricing-features">
+              <li class="feature-ok">Tudo do Profissional</li>
+              <li class="feature-ok">Usuários ilimitados</li>
+              <li class="feature-ok">API de integração com prontuário</li>
+              <li class="feature-ok">Treinamento da equipe</li>
+              <li class="feature-ok">SLA de suporte 24/7</li>
+              <li class="feature-ok">Relatórios institucionais</li>
+              <li class="feature-ok">Personalização de protocolo</li>
+            </ul>
+            <button class="btn-outline-plan" onclick="smoothScroll(event,'contact')">Falar com equipe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content" data-animate>
+          <h2>Comece a usar hoje mesmo.<br/>É gratuito.</h2>
+          <p>Sem cartão de crédito. Sem contrato. Configuração em menos de 2 minutos.</p>
+          <div class="cta-actions">
+            <button class="btn-cta-white" onclick="showApp('s-register')">Criar conta gratuita</button>
+            <button class="btn-cta-ghost" onclick="showApp('s-login')">Já tenho conta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info" data-animate>
+            <span class="section-tag">Contato</span>
+            <h2 class="contact-title">Fale com a nossa equipe</h2>
+            <p class="contact-desc">Dúvidas sobre o sistema, implantação institucional ou parceria? Nosso time de suporte está pronto para ajudar.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Telefone / WhatsApp</div>
+                  <div class="contact-value">(61) 99999-0000</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">E-mail</div>
+                  <div class="contact-value">suporte@cicatriza.app</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Horário de suporte</div>
+                  <div class="contact-value">Seg–Sex, 8h às 18h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap" data-animate>
+            <div class="contact-form">
+              <h3 class="form-title">Envie uma mensagem</h3>
+              <div class="form-row-contact">
+                <div class="form-group-c">
+                  <label>Nome completo</label>
+                  <input type="text" id="contact-name" placeholder="Seu nome" />
+                </div>
+                <div class="form-group-c">
+                  <label>E-mail</label>
+                  <input type="email" id="contact-email" placeholder="seu@email.com" />
+                </div>
+              </div>
+              <div class="form-group-c">
+                <label>Assunto</label>
+                <select id="contact-subject">
+                  <option value="">Selecione o assunto</option>
+                  <option>Dúvida sobre o sistema</option>
+                  <option>Implantação institucional</option>
+                  <option>Suporte técnico</option>
+                  <option>Parceria comercial</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+              <div class="form-group-c">
+                <label>Mensagem</label>
+                <textarea id="contact-message" rows="4" placeholder="Descreva sua dúvida ou solicitação..."></textarea>
+              </div>
+              <button class="btn-form-submit" onclick="submitContact()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Enviar mensagem
+              </button>
+              <div class="form-success" id="contact-success">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Mensagem enviada! Retornaremos em até 1 dia útil.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <div class="logo-icon small">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+              </div>
+              <span class="footer-logo-text">Cicatriza<span class="logo-plus">+</span></span>
+            </div>
+            <p class="footer-tagline">Sistema inteligente de gestão de feridas para profissionais de saúde.</p>
+            <div class="footer-badges">
+              <span class="footer-badge">LGPD</span>
+              <span class="footer-badge">COREN Verificado</span>
+              <span class="footer-badge">CFM Compliant</span>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Produto</h4>
+            <ul>
+              <li><a href="#features" onclick="smoothScroll(event,'features')">Funcionalidades</a></li>
+              <li><a href="#pricing" onclick="smoothScroll(event,'pricing')">Planos</a></li>
+              <li><a href="#how-it-works" onclick="smoothScroll(event,'how-it-works')">Como funciona</a></li>
+              <li><a href="#" onclick="showApp('s-dashboard')">Demo ao vivo</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Suporte</h4>
+            <ul>
+              <li><a href="#contact" onclick="smoothScroll(event,'contact')">Central de ajuda</a></li>
+              <li><a href="#contact" onclick="smoothScroll(event,'contact')">Fale conosco</a></li>
+              <li><a href="#">Documentação</a></li>
+              <li><a href="#">Status do sistema</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Termos de uso</a></li>
+              <li><a href="#">Política de privacidade</a></li>
+              <li><a href="#">LGPD</a></li>
+              <li><a href="#">Conformidade</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Cicatriza+. Todos os direitos reservados.</p>
+          <p>Desenvolvido com ❤️ para profissionais de saúde do Brasil.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /landing-page -->
+
+
+  <!-- ═══════════════════════════════════════════════
+       APLICAÇÃO — 8 TELAS
+  ══════════════════════════════════════════════════ -->
+  <div id="app-page" style="display:none;">
+
+    <!-- TOP NAV DA APP -->
+    <header class="app-topnav">
+      <div class="app-topnav-inner">
+        <div class="app-logo">
+          <div class="logo-icon small">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          </div>
+          <span>Cicatriza<span class="logo-plus">+</span></span>
+        </div>
+        <div class="app-screen-nav" id="app-screen-nav">
+          <button class="app-nav-btn active" data-screen="s-login">1 Login</button>
+          <button class="app-nav-btn" data-screen="s-register">2 Cadastro</button>
+          <button class="app-nav-btn" data-screen="s-dashboard">3 Área</button>
+          <button class="app-nav-btn" data-screen="s-new-patient">4 Novo Paciente</button>
+          <button class="app-nav-btn" data-screen="s-patients">5 Pacientes</button>
+          <button class="app-nav-btn" data-screen="s-patient-form">6 Avaliação</button>
+          <button class="app-nav-btn" data-screen="s-photos">7 Fotos</button>
+          <button class="app-nav-btn" data-screen="s-evolution">8 Evolução</button>
+        </div>
+        <button class="btn-back-landing" onclick="backToLanding()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Voltar ao site
+        </button>
+      </div>
+    </header>
+
+    <!-- SCREENS WRAPPER -->
+    <div class="screens-wrapper">
+
+      <!-- SCREEN 1: LOGIN -->
+      <div id="s-login" class="app-screen active">
+        <div class="auth-wrap">
+          <div class="auth-card">
+            <div class="auth-logo">
+              <div class="auth-logo-mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+              </div>
+              <h1>Cicatriza<span class="logo-plus">+</span></h1>
+              <p>Sistema de gestão de feridas</p>
+            </div>
+            <div class="form-group">
+              <label>CPF</label>
+              <input type="text" placeholder="000.000.000-00" value="123.456.789-00" />
+            </div>
+            <div class="form-group">
+              <label>Senha</label>
+              <input type="password" placeholder="••••••••" value="senha123" />
+            </div>
+            <a class="forgot-link">Esqueceu a senha?</a>
+            <button class="btn-primary-app" onclick="goToScreen('s-dashboard')">Entrar no sistema</button>
+            <div class="auth-divider"></div>
+            <button class="btn-secondary-app" onclick="goToScreen('s-register')">Criar nova conta</button>
+            <div class="auth-note">Acesso exclusivo para profissionais de saúde</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN 2: REGISTER -->
+      <div id="s-register" class="app-screen">
+        <div class="auth-wrap">
+          <div class="auth-card wider">
+            <div class="auth-logo">
+              <div class="auth-logo-mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <h1>Criar conta</h1>
+              <p>Preencha seus dados de profissional</p>
+            </div>
+            <div class="form-group">
+              <label>Nome completo</label>
+              <input type="text" placeholder="Enf. Maria Silva Santos" />
+            </div>
+            <div class="form-row-app">
+              <div class="form-group">
+                <label>CPF</label>
+                <input type="text" placeholder="000.000.000-00" />
+              </div>
+              <div class="form-group">
+                <label>Data de nascimento</label>
+                <input type="date" />
+              </div>
+            </div>
+            <div class="form-row-app">
+              <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" placeholder="maria@hospital.com" />
+              </div>
+              <div class="form-group">
+                <label>Telefone</label>
+                <input type="text" placeholder="(61) 99999-0000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Registro profissional (COREN)</label>
+              <input type="text" placeholder="COREN-DF 000000" />
+            </div>
+            <div class="form-row-app">
+              <div class="form-group">
+                <label>Senha</label>
+                <input type="password" placeholder="Mínimo 8 caracteres" />
+              </div>
+              <div class="form-group">
+                <label>Confirmar senha</label>
+                <input type="password" placeholder="Repita a senha" />
+              </div>
+            </div>
+            <div class="info-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              A confirmação de e-mail será enviada após o cadastro.
+            </div>
+            <button class="btn-primary-app" onclick="goToScreen('s-dashboard')">Concluir cadastro</button>
+            <div class="auth-note">Já tem conta? <a onclick="goToScreen('s-login')">Entrar</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN 3: DASHBOARD -->
+      <div id="s-dashboard" class="app-screen">
+        <div class="app-layout">
+          <aside class="sidebar" id="sidebar-dashboard">
+            <div class="sidebar-user">
+              <div class="user-avatar">MS</div>
+              <div class="user-name">Maria Silva</div>
+              <div class="user-role">Enfermeira · COREN-DF</div>
+            </div>
+            <nav class="sidebar-nav">
+              <div class="sidebar-item active" onclick="goToScreen('s-dashboard')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                Área de trabalho
+              </div>
+              <div class="sidebar-item" onclick="goToScreen('s-new-patient')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="16" y1="11" x2="20" y2="11"/><line x1="18" y1="9" x2="18" y2="13"/></svg>
+                Cadastrar paciente
+              </div>
+              <div class="sidebar-item" onclick="goToScreen('s-patients')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                Meus pacientes
+              </div>
+            </nav>
+            <div class="sidebar-bottom">
+              <div class="sidebar-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                Configurações
+              </div>
+              <div class="sidebar-item" onclick="goToScreen('s-login')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+                Sair da conta
+              </div>
+            </div>
+          </aside>
+
+          <main class="main-content">
+            <div class="page-header">
+              <h2>Bom dia, Maria 👋</h2>
+              <p id="dashboard-date">Carregando data...</p>
+            </div>
+
+            <div class="kpi-grid">
+              <div class="kpi-card">
+                <div class="kpi-label">Pacientes ativos</div>
+                <div class="kpi-value">12</div>
+                <div class="kpi-trend up">↑ 2 este mês</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-label">Avaliações este mês</div>
+                <div class="kpi-value">34</div>
+                <div class="kpi-trend up">↑ 8 vs mês anterior</div>
+              </div>
+              <div class="kpi-card critical">
+                <div class="kpi-label">Casos críticos</div>
+                <div class="kpi-value red-val">3</div>
+                <div class="kpi-trend down">Requer atenção</div>
+              </div>
+            </div>
+
+            <div class="dash-cards-grid">
+              <div class="dash-action-card teal" onclick="goToScreen('s-new-patient')">
+                <div class="dash-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="16" y1="11" x2="20" y2="11"/><line x1="18" y1="9" x2="18" y2="13"/></svg>
+                </div>
+                <div class="dash-card-body">
+                  <h3>Cadastrar paciente</h3>
+                  <p>Registre um novo paciente e inicie o acompanhamento de feridas</p>
+                </div>
+                <div class="dash-card-arrow">→</div>
+              </div>
+              <div class="dash-action-card green" onclick="goToScreen('s-patients')">
+                <div class="dash-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <div class="dash-card-body">
+                  <h3>Pacientes registrados</h3>
+                  <p>Acesse a lista de pacientes e o histórico de avaliações</p>
+                </div>
+                <div class="dash-card-arrow">→</div>
+              </div>
+            </div>
+
+            <!-- RECENT ACTIVITY -->
+            <div class="recent-section">
+              <h3 class="recent-title">Atividade recente</h3>
+              <div class="recent-list">
+                <div class="recent-item">
+                  <div class="recent-dot red-dot"></div>
+                  <div class="recent-body">
+                    <div class="recent-patient">João Carlos Oliveira <span class="badge-critical">Crítica</span></div>
+                    <div class="recent-info">Avaliação realizada · 14/04/2025 · Calcâneo direito</div>
+                  </div>
+                  <button class="recent-btn" onclick="goToScreen('s-patient-form')">Abrir →</button>
+                </div>
+                <div class="recent-item">
+                  <div class="recent-dot amber-dot"></div>
+                  <div class="recent-body">
+                    <div class="recent-patient">Ana Paula Ferreira <span class="badge-healing">Cicatrizando</span></div>
+                    <div class="recent-info">Foto registrada · 13/04/2025 · Região sacral</div>
+                  </div>
+                  <button class="recent-btn" onclick="goToScreen('s-patient-form')">Abrir →</button>
+                </div>
+                <div class="recent-item">
+                  <div class="recent-dot green-dot"></div>
+                  <div class="recent-body">
+                    <div class="recent-patient">Roberto Alves Santos <span class="badge-active">Ativa</span></div>
+                    <div class="recent-info">Novo cadastro · 12/04/2025 · Maléolo esquerdo</div>
+                  </div>
+                  <button class="recent-btn" onclick="goToScreen('s-patient-form')">Abrir →</button>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <!-- SCREEN 4: NEW PATIENT -->
+      <div id="s-new-patient" class="app-screen">
+        <div class="app-layout">
+          <aside class="sidebar">
+            <div class="sidebar-user">
+              <div class="user-avatar">MS</div>
+              <div class="user-name">Maria Silva</div>
+              <div class="user-role">Enfermeira · COREN-DF</div>
+            </div>
+            <nav class="sidebar-nav">
+              <div class="sidebar-item" onclick="goToScreen('s-dashboard')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                Área de trabalho
+              </div>
+              <div class="sidebar-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Cadastrar paciente
+              </div>
+              <div class="sidebar-item" onclick="goToScreen('s-patients')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                Meus pacientes
+              </div>
+            </nav>
+            <div class="sidebar-bottom">
+              <div class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4"/></svg> Configurações</div>
+            </div>
+          </aside>
+          <main class="main-content">
+            <div class="breadcrumb">
+              <a onclick="goToScreen('s-dashboard')">Área de trabalho</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              Novo paciente
+            </div>
+            <div class="page-header">
+              <h2>Cadastrar paciente</h2>
+              <p>Preencha os dados do paciente para iniciar o acompanhamento</p>
+            </div>
+            <div class="app-card">
+              <div class="eval-section">
+                <h4>Dados pessoais</h4>
+                <div class="form-group">
+                  <label>Nome completo</label>
+                  <input type="text" placeholder="Nome completo do paciente" />
+                </div>
+                <div class="form-row-app">
+                  <div class="form-group">
+                    <label>CPF</label>
+                    <input type="text" placeholder="000.000.000-00" />
+                  </div>
+                  <div class="form-group">
+                    <label>Data de nascimento</label>
+                    <input type="date" />
+                  </div>
+                </div>
+                <div class="form-row-app">
+                  <div class="form-group">
+                    <label>Sexo</label>
+                    <select><option>Selecionar</option><option>Feminino</option><option>Masculino</option><option>Outro</option></select>
+                  </div>
+                  <div class="form-group">
+                    <label>Telefone / responsável</label>
+                    <input type="text" placeholder="(61) 99999-0000" />
+                  </div>
+                </div>
+              </div>
+              <div class="eval-section">
+                <h4>Dados clínicos</h4>
+                <div class="form-row-app">
+                  <div class="form-group">
+                    <label>Prontuário / nº de registro</label>
+                    <input type="text" placeholder="000000" />
+                  </div>
+                  <div class="form-group">
+                    <label>Leito / setor</label>
+                    <input type="text" placeholder="Ex: UTI – Leito 12" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Diagnóstico principal</label>
+                  <input type="text" placeholder="Ex: Diabetes mellitus tipo 2" />
+                </div>
+                <div class="form-group">
+                  <label>Observações iniciais</label>
+                  <textarea rows="3" placeholder="Alergias, comorbidades relevantes..."></textarea>
+                </div>
+              </div>
+              <button class="btn-primary-app" onclick="goToScreen('s-patients')">Cadastrar e ver lista de pacientes</button>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <!-- SCREEN 5: PATIENTS LIST -->
+      <div id="s-patients" class="app-screen">
+        <div class="app-layout">
+          <aside class="sidebar">
+            <div class="sidebar-user">
+              <div class="user-avatar">MS</div>
+              <div class="user-name">Maria Silva</div>
+              <div class="user-role">Enfermeira · COREN-DF</div>
+            </div>
+            <nav class="sidebar-nav">
+              <div class="sidebar-item" onclick="goToScreen('s-dashboard')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                Área de trabalho
+              </div>
+              <div class="sidebar-item" onclick="goToScreen('s-new-patient')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Cadastrar paciente
+              </div>
+              <div class="sidebar-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                Meus pacientes
+              </div>
+            </nav>
+            <div class="sidebar-bottom">
+              <div class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4"/></svg> Configurações</div>
+            </div>
+          </aside>
+          <main class="main-content">
+            <div class="page-header">
+              <h2>Meus pacientes</h2>
+              <p>12 pacientes cadastrados</p>
+            </div>
+            <div class="toolbar">
+              <div class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <input id="patient-search" type="text" placeholder="Buscar por nome ou CPF..." oninput="filterPatients()" />
+              </div>
+              <select class="filter-select" id="status-filter" onchange="filterPatients()">
+                <option value="">Todos os status</option>
+                <option value="Ativa">Ativa</option>
+                <option value="Cicatrizando">Cicatrizando</option>
+                <option value="Crítica">Crítica</option>
+              </select>
+              <button class="btn-sm-app" onclick="goToScreen('s-new-patient')">+ Novo paciente</button>
+            </div>
+            <div class="table-wrapper">
+              <table class="patient-table" id="patients-table">
+                <thead>
+                  <tr>
+                    <th>Paciente</th>
+                    <th>CPF</th>
+                    <th>Idade</th>
+                    <th>Última avaliação</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="patients-tbody">
+                  <tr onclick="goToScreen('s-patient-form')">
+                    <td><strong>João Carlos Oliveira</strong></td>
+                    <td>123.456.789-00</td>
+                    <td>67 anos</td>
+                    <td>14/04/2025</td>
+                    <td><span class="badge-status critical-st">Crítica</span></td>
+                    <td class="table-action">Abrir →</td>
+                  </tr>
+                  <tr onclick="goToScreen('s-patient-form')">
+                    <td><strong>Ana Paula Ferreira</strong></td>
+                    <td>234.567.890-11</td>
+                    <td>54 anos</td>
+                    <td>13/04/2025</td>
+                    <td><span class="badge-status healing-st">Cicatrizando</span></td>
+                    <td class="table-action">Abrir →</td>
+                  </tr>
+                  <tr onclick="goToScreen('s-patient-form')">
+                    <td><strong>Roberto Alves Santos</strong></td>
+                    <td>345.678.901-22</td>
+                    <td>72 anos</td>
+                    <td>12/04/2025</td>
+                    <td><span class="badge-status active-st">Ativa</span></td>
+                    <td class="table-action">Abrir →</td>
+                  </tr>
+                  <tr onclick="goToScreen('s-patient-form')">
+                    <td><strong>Luciana Costa Rocha</strong></td>
+                    <td>456.789.012-33</td>
+                    <td>48 anos</td>
+                    <td>10/04/2025</td>
+                    <td><span class="badge-status active-st">Ativa</span></td>
+                    <td class="table-action">Abrir →</td>
+                  </tr>
+                  <tr onclick="goToScreen('s-patient-form')">
+                    <td><strong>Carlos Eduardo Lima</strong></td>
+                    <td>567.890.123-44</td>
+                    <td>59 anos</td>
+                    <td>08/04/2025</td>
+                    <td><span class="badge-status healing-st">Cicatrizando</span></td>
+                    <td class="table-action">Abrir →</td>
+                  </tr>
+                  <tr onclick="goToScreen('s-patient-form')">
+                    <td><strong>Fernanda Moura Dias</strong></td>
+                    <td>678.901.234-55</td>
+                    <td>61 anos</td>
+                    <td>07/04/2025</td>
+                    <td><span class="badge-status critical-st">Crítica</span></td>
+                    <td class="table-action">Abrir →</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <!-- SCREEN 6: PATIENT FORM / AVALIAÇÃO -->
+      <div id="s-patient-form" class="app-screen">
+        <div class="app-layout">
+          <aside class="sidebar">
+            <div class="sidebar-user">
+              <div class="user-avatar">MS</div>
+              <div class="user-name">Maria Silva</div>
+              <div class="user-role">Enfermeira · COREN-DF</div>
+            </div>
+            <nav class="sidebar-nav">
+              <div class="sidebar-item" onclick="goToScreen('s-dashboard')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                Área de trabalho
+              </div>
+              <div class="sidebar-item" onclick="goToScreen('s-patients')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                Meus pacientes
+              </div>
+            </nav>
+            <div class="sidebar-bottom">
+              <div class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4"/></svg> Configurações</div>
+            </div>
+          </aside>
+          <main class="main-content">
+            <div class="breadcrumb">
+              <a onclick="goToScreen('s-patients')">Pacientes</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              João Carlos Oliveira
+            </div>
+            <div class="patient-header">
+              <div>
+                <h2>João Carlos Oliveira</h2>
+                <p>67 anos · CPF: 123.456.789-00 · Leito UTI-12</p>
+              </div>
+              <span class="badge-status critical-st large-badge">Ferida crítica</span>
+            </div>
+            <div class="app-tabs">
+              <button class="app-tab active" onclick="switchAppTab(this, 0)">Avaliação da ferida</button>
+              <button class="app-tab" onclick="switchAppTab(this, 1); goToScreen('s-photos')">Fotos da ferida</button>
+              <button class="app-tab" onclick="switchAppTab(this, 2); goToScreen('s-evolution')">Relatório de evolução</button>
+            </div>
+            <div class="app-card">
+              <div class="eval-section">
+                <h4>Identificação e localização</h4>
+                <div class="form-row-app">
+                  <div class="form-group">
+                    <label>Localização da ferida</label>
+                    <select>
+                      <option>Calcâneo direito</option>
+                      <option>Calcâneo esquerdo</option>
+                      <option>Região sacral</option>
+                      <option>Maléolo</option>
+                      <option>Outro</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Data da avaliação</label>
+                    <input type="date" value="2025-04-16" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="eval-section">
+                <h4>Descrição da ferida</h4>
+                <div class="form-row-app">
+                  <div class="form-group">
+                    <label>Comprimento (cm)</label>
+                    <input type="number" placeholder="ex: 4.5" />
+                  </div>
+                  <div class="form-group">
+                    <label>Largura (cm)</label>
+                    <input type="number" placeholder="ex: 3.0" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Profundidade</label>
+                  <select>
+                    <option>Superficial</option>
+                    <option>Parcial (derme)</option>
+                    <option>Total (subcutâneo)</option>
+                    <option>Com exposição óssea</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Descrição clínica</label>
+                  <textarea rows="3" placeholder="Descreva o aspecto geral da ferida..."></textarea>
+                </div>
+              </div>
+
+              <div class="eval-section">
+                <h4>Tipo de ferida</h4>
+                <div class="radio-grid">
+                  <label class="radio-opt"><input type="radio" name="tipo" checked /> Úlcera por pressão</label>
+                  <label class="radio-opt"><input type="radio" name="tipo" /> Úlcera venosa</label>
+                  <label class="radio-opt"><input type="radio" name="tipo" /> Úlcera arterial</label>
+                  <label class="radio-opt"><input type="radio" name="tipo" /> Ferida cirúrgica</label>
+                  <label class="radio-opt"><input type="radio" name="tipo" /> Ferida traumática</label>
+                  <label class="radio-opt"><input type="radio" name="tipo" /> Pé diabético</label>
+                </div>
+              </div>
+
+              <div class="eval-section">
+                <h4>Avaliação do tecido</h4>
+                <div class="radio-grid">
+                  <label class="radio-opt"><input type="radio" name="tecido" /> Tecido de granulação</label>
+                  <label class="radio-opt"><input type="radio" name="tecido" checked /> Tecido esfacelo</label>
+                  <label class="radio-opt"><input type="radio" name="tecido" /> Tecido necrótico</label>
+                  <label class="radio-opt"><input type="radio" name="tecido" /> Epitelização</label>
+                </div>
+              </div>
+
+              <div class="eval-section">
+                <h4>Exsudato</h4>
+                <div class="form-row-app">
+                  <div class="form-group">
+                    <label>Quantidade</label>
+                    <select><option>Ausente</option><option>Escasso</option><option>Moderado</option><option>Abundante</option></select>
+                  </div>
+                  <div class="form-group">
+                    <label>Tipo</label>
+                    <select><option>Seroso</option><option>Serossanguinolento</option><option>Purulento</option><option>Hemático</option></select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="eval-section">
+                <h4>Sinais de infecção</h4>
+                <div class="radio-grid">
+                  <label class="radio-opt"><input type="checkbox" /> Eritema perilesional</label>
+                  <label class="radio-opt"><input type="checkbox" checked /> Calor local</label>
+                  <label class="radio-opt"><input type="checkbox" checked /> Odor fétido</label>
+                  <label class="radio-opt"><input type="checkbox" /> Edema</label>
+                </div>
+              </div>
+
+              <div class="eval-section">
+                <h4>Tratamento aplicado</h4>
+                <div class="form-group">
+                  <label>Cobertura utilizada</label>
+                  <select>
+                    <option>Selecionar</option>
+                    <option>Gaze simples</option>
+                    <option>Hidrocolóide</option>
+                    <option>Alginato de cálcio</option>
+                    <option>Espuma de poliuretano</option>
+                    <option>PHMB</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Conduta e observações</label>
+                  <textarea rows="3" placeholder="Descreva o procedimento realizado..."></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn-primary-app" onclick="saveEvaluation()">Salvar avaliação</button>
+                <button class="btn-secondary-app" onclick="goToScreen('s-photos')">Registrar fotos →</button>
+              </div>
+              <div class="save-success" id="eval-success">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Avaliação salva com sucesso!
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <!-- SCREEN 7: PHOTOS -->
+      <div id="s-photos" class="app-screen">
+        <div class="app-layout">
+          <aside class="sidebar">
+            <div class="sidebar-user">
+              <div class="user-avatar">MS</div>
+              <div class="user-name">Maria Silva</div>
+              <div class="user-role">Enfermeira · COREN-DF</div>
+            </div>
+            <nav class="sidebar-nav">
+              <div class="sidebar-item" onclick="goToScreen('s-dashboard')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                Área de trabalho
+              </div>
+              <div class="sidebar-item" onclick="goToScreen('s-patients')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                Meus pacientes
+              </div>
+            </nav>
+            <div class="sidebar-bottom">
+              <div class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4"/></svg> Configurações</div>
+            </div>
+          </aside>
+          <main class="main-content">
+            <div class="breadcrumb">
+              <a onclick="goToScreen('s-patients')">Pacientes</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              <a onclick="goToScreen('s-patient-form')">João Carlos Oliveira</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              Fotos da ferida
+            </div>
+            <div class="photos-header">
+              <div>
+                <h2>Fotos da ferida</h2>
+                <p>João Carlos Oliveira — 5 fotos registradas</p>
+              </div>
+              <button class="btn-sm-app" onclick="triggerUpload()">+ Adicionar foto</button>
+              <input type="file" id="photo-input" accept="image/*" style="display:none" onchange="handlePhotoUpload(event)" />
+            </div>
+            <div class="app-tabs">
+              <button class="app-tab" onclick="goToScreen('s-patient-form')">Avaliação da ferida</button>
+              <button class="app-tab active">Fotos da ferida</button>
+              <button class="app-tab" onclick="goToScreen('s-evolution')">Relatório de evolução</button>
+            </div>
+            <div class="app-card">
+              <div class="upload-zone" onclick="triggerUpload()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <p>Arraste fotos aqui ou clique para fazer upload</p>
+                <span>JPG, PNG — máximo 10MB por foto</span>
+              </div>
+
+              <div class="section-label">Fotos anteriores</div>
+              <div class="photo-grid" id="photo-grid">
+                <div class="photo-thumb" style="background:linear-gradient(135deg,#e2e8f0 0%,#cbd5e1 100%)">
+                  <svg class="photo-icon" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                  <div class="photo-date">14/04/2025</div>
+                </div>
+                <div class="photo-thumb" style="background:linear-gradient(135deg,#cbd5e1,#94a3b8)">
+                  <svg class="photo-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                  <div class="photo-date">10/04/2025</div>
+                </div>
+                <div class="photo-thumb" style="background:linear-gradient(135deg,#b0b8c4,#7a838f)">
+                  <svg class="photo-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                  <div class="photo-date">05/04/2025</div>
+                </div>
+                <div class="photo-thumb" style="background:linear-gradient(135deg,#e8edf2,#b0b8c4)">
+                  <svg class="photo-icon" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                  <div class="photo-date">01/04/2025</div>
+                </div>
+                <div class="photo-thumb" style="background:linear-gradient(135deg,#f1f5f9,#e2e8f0)">
+                  <svg class="photo-icon" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                  <div class="photo-date">26/03/2025</div>
+                </div>
+                <div class="photo-thumb upload-thumb" onclick="triggerUpload()">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
+                  <span>Nova foto</span>
+                </div>
+              </div>
+
+              <div class="card-footer-action">
+                <button class="btn-secondary-app" onclick="goToScreen('s-evolution')">Ver relatório de evolução →</button>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <!-- SCREEN 8: EVOLUTION REPORT -->
+      <div id="s-evolution" class="app-screen">
+        <div class="app-layout">
+          <aside class="sidebar">
+            <div class="sidebar-user">
+              <div class="user-avatar">MS</div>
+              <div class="user-name">Maria Silva</div>
+              <div class="user-role">Enfermeira · COREN-DF</div>
+            </div>
+            <nav class="sidebar-nav">
+              <div class="sidebar-item" onclick="goToScreen('s-dashboard')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                Área de trabalho
+              </div>
+              <div class="sidebar-item" onclick="goToScreen('s-patients')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                Meus pacientes
+              </div>
+            </nav>
+            <div class="sidebar-bottom">
+              <div class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4"/></svg> Configurações</div>
+            </div>
+          </aside>
+          <main class="main-content">
+            <div class="breadcrumb">
+              <a onclick="goToScreen('s-patients')">Pacientes</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              <a onclick="goToScreen('s-patient-form')">João Carlos Oliveira</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              Relatório de evolução
+            </div>
+            <div class="app-tabs">
+              <button class="app-tab" onclick="goToScreen('s-patient-form')">Avaliação da ferida</button>
+              <button class="app-tab" onclick="goToScreen('s-photos')">Fotos da ferida</button>
+              <button class="app-tab active">Relatório de evolução</button>
+            </div>
+
+            <div class="evolution-grid">
+              <!-- NEW REPORT FORM -->
+              <div class="app-card">
+                <div class="section-label-teal">Novo relatório</div>
+                <div class="form-group">
+                  <label>Data do relatório</label>
+                  <input type="date" value="2025-04-16" />
+                </div>
+                <div class="form-group">
+                  <label>Evolução geral</label>
+                  <select>
+                    <option>Melhora significativa</option>
+                    <option>Melhora leve</option>
+                    <option>Sem alteração</option>
+                    <option>Piora leve</option>
+                    <option>Piora significativa</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Tamanho atual da ferida (cm²)</label>
+                  <input type="number" placeholder="ex: 13.5" />
+                </div>
+                <div class="form-group">
+                  <label>Tratamento realizado</label>
+                  <textarea rows="3" placeholder="Descreva o tratamento e procedimento..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Observações clínicas</label>
+                  <textarea rows="3" placeholder="Registre observações relevantes..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Próxima avaliação prevista</label>
+                  <input type="date" />
+                </div>
+                <button class="btn-primary-app" onclick="saveReport()">Salvar relatório</button>
+                <div class="save-success" id="report-success">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Relatório salvo com sucesso!
+                </div>
+              </div>
+
+              <!-- TIMELINE -->
+              <div class="app-card">
+                <div class="section-label-teal">Histórico de evolução</div>
+                <div class="evolution-timeline" id="evolution-timeline">
+                  <div class="tl-item">
+                    <div class="tl-left">
+                      <div class="tl-dot red-tl"></div>
+                      <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-body">
+                      <div class="tl-meta">14/04/2025 — <span class="tl-status critical-label">Crítica</span></div>
+                      <div class="tl-text">Área: 18cm² · Exsudato purulento abundante. Sinais infecciosos presentes. Cobertura PHMB aplicada.</div>
+                    </div>
+                  </div>
+                  <div class="tl-item">
+                    <div class="tl-left">
+                      <div class="tl-dot amber-tl"></div>
+                      <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-body">
+                      <div class="tl-meta">10/04/2025 — <span class="tl-status amber-label">Estável</span></div>
+                      <div class="tl-text">Área: 16cm² · Melhora leve no exsudato. Início de desbridamento. Alginato de cálcio.</div>
+                    </div>
+                  </div>
+                  <div class="tl-item">
+                    <div class="tl-left">
+                      <div class="tl-dot green-tl"></div>
+                      <div class="tl-line"></div>
+                    </div>
+                    <div class="tl-body">
+                      <div class="tl-meta">05/04/2025 — <span class="tl-status green-label">Melhora leve</span></div>
+                      <div class="tl-text">Área: 14cm² · Redução do edema. Tecido de granulação emergindo nas bordas.</div>
+                    </div>
+                  </div>
+                  <div class="tl-item last-tl">
+                    <div class="tl-left">
+                      <div class="tl-dot teal-tl"></div>
+                    </div>
+                    <div class="tl-body">
+                      <div class="tl-meta">01/04/2025 — <span class="tl-status teal-label">1ª avaliação</span></div>
+                      <div class="tl-text">Área: 20cm² · Diagnóstico inicial. Úlcera por pressão grau III. Necrose presente.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+
+    </div><!-- /screens-wrapper -->
+  </div><!-- /app-page -->
+
+  <script src="script.js"></script>
+</body>
+</html>
